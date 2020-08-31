@@ -1,0 +1,225 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =====create classes using @apply directive ====== */
+
+
+/* for label */
+
+.form-label {
+    @apply block text-blue text-sm font-semibold mb-2 ml-4 tracking-wider;
+}
+
+
+/* for input field */
+
+.input-field {
+    @apply border-2 tracking-wider rounded-full w-full py-2 px-4;
+}
+
+.input-field:focus {
+    @apply outline-none shadow-none border-blue;
+}
+
+
+/* for blue btn */
+
+.btn-blue {
+    @apply tracking-wider bg-blue text-white font-semibold text-sm py-3 px-4 rounded-full uppercase;
+}
+
+.btn-blue:focus {
+    @apply outline-none;
+}
+
+
+/* for header notification/alert count */
+
+.notification-count {
+    @apply absolute bg-purple text-white rounded-full h-4 w-4 flex items-center justify-center;
+}
+
+
+/* for header nav-items */
+
+.nav-items {
+    @apply shadow cursor-pointer bg-gray-100 rounded-full h-10 w-10 flex items-center justify-center;
+}
+
+.nav-items:hover {
+    @apply text-purple;
+}
+
+
+/* for aside nav items */
+
+.aside-nav-items {
+    @apply block px-5 py-3 cursor-pointer font-semibold border-b;
+}
+
+.aside-nav-items:hover {
+    @apply bg-blue text-white;
+}
+
+#asideNav .aside-nav-items.active {
+    @apply bg-blue text-white;
+}
+
+
+/* for aside submenu items */
+
+.aside-submenu-items {
+    @apply block bg-gray-100 pl-12 pr-5 py-3 text-sm cursor-pointer font-semibold border-b;
+}
+
+.aside-submenu-items:hover {
+    @apply bg-blue text-white;
+}
+
+
+/* for aside submenu items active color */
+
+.aside-submenu-firstlevel .aside-submenu-firstlevel-items .aside-submenu-items.active {
+    @apply bg-blue text-white;
+}
+
+
+/* for social media buttons */
+
+.btn-social-icon {
+    @apply h-8 w-8 leading-8 rounded-full bg-blue text-white m-1;
+}
+
+.btn-social-icon:hover {
+    @apply bg-white text-blue;
+}
+
+
+/* =====create custom css ====== */
+
+body,
+html {
+    height: 100%;
+}
+
+
+/* scroll bar width */
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ccc;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #ffffff;
+    border-radius: 5px;
+}
+
+
+/* header css */
+
+header .notification-count {
+    right: -2px;
+    top: -2px;
+    font-size: 10px;
+}
+
+header .search-icon {
+    right: 19px;
+    top: 12px;
+}
+
+header .nav-dropdown-menu {
+    width: max-content;
+    min-width: 250px;
+    right: 0px;
+}
+
+header .nav-dropdown-menu:after {
+    content: "";
+    position: absolute;
+    top: -8px;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #4755ab;
+    margin-right: 8px;
+}
+
+
+/* xs screen to i-pad screen media query */
+
+@media(min-width:300px) and (max-width:767.98px) {
+    header .nav-dropdown-menu {
+        width: 96.5%;
+        min-width: auto;
+        left: 6px;
+    }
+    header .nav-dropdown-menu:after {
+        display: none;
+    }
+}
+
+
+/* aside nav */
+
+#asideNav {
+    width: 250px;
+}
+
+#asideNav .aside-items-caret {
+    margin-top: 6px;
+    width: 8px;
+}
+
+
+/* main section */
+
+#mainSection {
+    margin-left: 250px;
+    margin-top: 65px;
+}
+
+
+/* xs screen to i-pad screen media query */
+
+@media(min-width:300px) and (max-width:767.98px) {
+    #mainSection {
+        margin-left: 0px;
+    }
+}
+
+
+/* social icon css */
+
+.btn-social-icon {
+    transition-duration: 1s;
+    box-shadow: 0 0 0 3px #4755ab;
+}
+
+.btn-social-icon:hover {
+    transform: rotate(360deg);
+    box-shadow: 0 0 0 3px #4755ab;
+}
+
+
+/* footer section */
+
+#footer {
+    margin-left: 250px;
+}
+
+
+/* xs screen to i-pad screen media query */
+
+@media(min-width:300px) and (max-width:767.98px) {
+    #footer {
+        margin-left: 0px;
+    }
+}
